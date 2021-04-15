@@ -17,8 +17,15 @@ const vendorSchema = Schema({
   name: String,
 });
 
+const UserSchema = new mongoose.Schema({  
+  id: ObjectId,
+  name: String,
+  email: String,
+  password: String,
+});
 
 const Product = model('Product', productSchema);
 const Vendor = model('Vendor', vendorSchema);
+const User = model('User', UserSchema);
 
-module.exports = { Product, Vendor };
+module.exports = { Product, Vendor, User };
