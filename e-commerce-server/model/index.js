@@ -9,16 +9,22 @@ const productSchema = Schema({
   image: String,
   price: Number,
   description: String,
-  Vendor: { type: ObjectId, ref: 'Vendor' }
+  manufacturer: { type: ObjectId, ref: 'Manufacturer' }
 });
 
-const vendorSchema = Schema({
+const manufacturerSchema = Schema({
   id: ObjectId,
   name: String,
 });
 
-
+const UserSchema = new mongoose.Schema({  
+  id: ObjectId,
+  name: String,
+  email: String,
+  password: String,
+});
 const Product = model('Product', productSchema);
-const Vendor = model('Vendor', vendorSchema);
+const Manufacturer = model('Manufacturer', manufacturerSchema);
+const User = model('User', UserSchema);
 
-module.exports = { Product, Vendor };
+module.exports = { Product, Manufacturer, User };

@@ -4,7 +4,7 @@ const { Product } = Model;
 const productController = {
   all(req, res) {
     Product.find({})
-      .populate('vendor')
+      .populate('manufacturer')
       .exec((err, products) => res.json(products))
   },
   byId(req, res) {
@@ -12,7 +12,7 @@ const productController = {
 
     Product
       .findOne({ _id: idParams })
-      .populate('vendor')
+      .populate('manufacturer')
       .exec((err, product) => res.json(product));
   },
   create(req, res) {
@@ -22,7 +22,7 @@ const productController = {
     newProduct.save((err, saved) => {
       Product
         .findOne({ _id: newProduct._id })
-        .populate('vendor')
+        .populate('manufacturer')
         .exec((err, product) => res.json(product))
     })
   },
