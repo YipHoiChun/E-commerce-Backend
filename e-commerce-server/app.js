@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// 導入 mongoose
+// mongoose
 const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
@@ -18,8 +18,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
-// 連接資料庫
-mongoose.connect(process.env.MONGO_URI || `mongodb+srv://yiphoichun:12345@cluster0.fcyxc.mongodb.net/vua_online_shop?retryWrites=true&w=majority`, {
+// Connect to the database
+mongoose.connect(process.env.MONGO_URI || `mongodb+srv://yiphoichun:12345@cluster0.fcyxc.mongodb.net/shop?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   user: process.env.MONGO_USER,

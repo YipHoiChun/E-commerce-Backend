@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../../controllers/product');
-const vendorController = require('../../controllers/vendor');
+const manufacturerController = require('../../controllers/manufacturer');
 const userController = require('../../controllers/user');
 
 router.get('/users', userController.all);
@@ -10,11 +10,11 @@ router.post('/users', userController.create);
 router.put('/users/:id', userController.update);
 router.delete('/users/:id', userController.remove);
 
-router.get('/vendors', vendorController.all);
-router.get('/vendors/:id', vendorController.byId);
-router.post('/vendors', vendorController.create);
-router.put('/vendors/:id', vendorController.update);
-router.delete('/vendors/:id', vendorController.remove);
+router.get('/manufacturers', manufacturerController.all);
+router.get('/manufacturers/:id', manufacturerController.byId);
+router.post('/manufacturers', manufacturerController.create);
+router.put('/manufacturers/:id', manufacturerController.update);
+router.delete('/manufacturers/:id', manufacturerController.remove);
 
 router.get('/products', productController.all);
 router.get('/products/:id', productController.byId);

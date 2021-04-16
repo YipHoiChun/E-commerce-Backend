@@ -3,21 +3,19 @@ const Schema = mongoose.Schema;
 const model = mongoose.model.bind(mongoose);
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
-const merchandiseSchema = Schema({
+const productSchema = Schema({
   id: ObjectId,
   name: String,
   image: String,
   price: Number,
   description: String,
-  company: { type: ObjectId, ref: 'Company' }
+  manufacturer: { type: ObjectId, ref: 'Manufacturer' }
 });
 
-const companySchema = Schema({
+const manufacturerSchema = Schema({
   id: ObjectId,
   name: String,
 });
-
-
 
 const UserSchema = new mongoose.Schema({  
   id: ObjectId,
@@ -25,8 +23,8 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
 });
-
-const Merchandise = model('Merchandise', merchandiseSchema);
-const Company = model('Company', companySchema);
+const Product = model('Product', productSchema);
+const Manufacturer = model('Manufacturer', manufacturerSchema);
 const User = model('User', UserSchema);
-module.exports = { Merchandise, Company , User };
+
+module.exports = { Product, Manufacturer, User };
