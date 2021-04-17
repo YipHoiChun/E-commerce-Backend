@@ -48,8 +48,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+const usersRoute = require('./routes/users')
+app.use('/users', usersRoute);
+
+const authRoute = require('./routes/auth')
+app.use('/auth', authRoute);
+
 app.use('/api/v1', api);
 
 // catch 404 and forward to error handler
