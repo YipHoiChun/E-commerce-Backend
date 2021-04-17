@@ -17,14 +17,15 @@ const manufacturerSchema = Schema({
   name: String,
 });
 
-const UserSchema = new mongoose.Schema({  
-  id: ObjectId,
-  name: String,
-  email: String,
-  password: String,
-});
+// const UserSchema = new mongoose.Schema({  
+//   id: ObjectId,
+//   name: String,
+//   email: String,
+//   password: String,
+// });
 const Product = model('Product', productSchema);
 const Manufacturer = model('Manufacturer', manufacturerSchema);
-const User = model('User', UserSchema);
+// const User = model('User', UserSchema);
 
-module.exports = { Product, Manufacturer, User };
+// module.exports = { Product, Manufacturer, User };
+module.exports = { Product, Manufacturer};
