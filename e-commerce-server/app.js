@@ -56,7 +56,7 @@ app.use('/users', usersRoute);
 const authRoute = require('./routes/auth')
 app.use('/auth', authRoute);
 
-app.use('/api/v1', api);
+app.use('/api/', api);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

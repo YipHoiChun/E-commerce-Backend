@@ -40,7 +40,7 @@ const productController = {
   remove(req, res) {
     const idParams = req.params.id;
 
-    Product.findOne({ _id: idParams }).remove( (err, removed) => res.json(idParams) )
+    Product.findOne({ _id: idParams }).remove((err, removed) => res.json(idParams))
   }
 }
 

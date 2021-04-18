@@ -34,7 +34,7 @@ const manufacturerController = {
   remove(req, res) {
     const idParams = req.params.id;
 
-    Manufacturer.findOne({ _id: idParams }).remove( (err, removed) => res.json(idParams) )
+    Manufacturer.findOne({ _id: idParams }).remove((err, removed) => res.json(idParams))
   }
 }
 
