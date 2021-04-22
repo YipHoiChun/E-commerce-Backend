@@ -19,14 +19,18 @@ app.set('view engine', 'jade');
 
 
 // Connect to the database
-mongoose.connect(process.env.MONGO_URI || `mongodb+srv://yiphoichun:12345@cluster0.fcyxc.mongodb.net/shop?retryWrites=true&w=majority`, {
+// mongoose.connect(process.env.MONGO_URI || `mongodb+srv://yiphoichun:12345@cluster0.fcyxc.mongodb.net/shop?retryWrites=true&w=majority`, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   user: process.env.MONGO_USER,
+//   pass: process.env.MONGO_PASSWORD,
+// });
+mongoose.connect(process.env.MONGO_URI || `mongodb+srv://yiphoichun:12345@cluster0.fcyxc.mongodb.net/shopdb?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   user: process.env.MONGO_USER,
   pass: process.env.MONGO_PASSWORD,
 });
-
-
 
 // CORS config here
 app.all('/*', function (req, res, next) {
