@@ -1,6 +1,7 @@
 # E-commerce-Backend
 
 ## Run
+``` bash
 cd e-commerce
 
 npm start
