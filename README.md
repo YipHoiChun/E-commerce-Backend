@@ -1,5 +1,11 @@
 # E-commerce-Backend
 
+## Run
+cd e-commerce
+
+npm start
+
+
 ## Build Setup
 
 ``` bash
