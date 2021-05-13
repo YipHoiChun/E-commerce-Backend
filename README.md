@@ -2,9 +2,9 @@
 
 ## Run
 ``` bash
-//#run server
+#move foldor
 cd e-commerce
-
+#run server
 npm start
 
 
